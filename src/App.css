@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #eaf3fc, #cfdffb);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.App {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.App:hover {
+  transform: scale(1.05);
+}
+
+.password-generator h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4e72b6;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.password-length {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.password-length label {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.password-length input[type="range"] {
+  width: 70%;
+  background: linear-gradient(to right, #6ec1e4, #a8c8f8);
+  border-radius: 10px;
+  height: 8px;
+  cursor: pointer;
+  appearance: none;
+  transition: background 0.3s ease;
+}
+
+.password-length input[type="range"]:focus {
+  outline: none;
+}
+
+.password-length input[type="range"]::-webkit-slider-thumb,
+.password-length input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  background-color: #4e72b6;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.password-length input[type="range"]::-webkit-slider-thumb:hover,
+.password-length input[type="range"]::-moz-range-thumb:hover {
+  background-color: #6c8bc7;
+}
+
+.options {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.options div {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.options input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-right: 12px;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #4e72b6;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.options input[type="checkbox"]:checked {
+  background-color: #4e72b6;
+}
+
+.options input[type="checkbox"]:checked::before {
+  content: "✔";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.options label {
+  font-size: 1rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.password-generator button {
+  background-color: #4e72b6;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.password-generator button:hover {
+  background-color: #6c8bc7;
+  transform: scale(1.03);
+}
+
+.password-generator button:active {
+  background-color: #3b578b;
+}
+
+.password-display {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.password-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.password-inline .password {
+  font-size: 1.1rem;
+  font-family: "Courier New", Courier, monospace;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.password-inline .copy-btn {
+  flex: 1;
+  padding: 10px 15px;
+  background-color: #4e72b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.password-inline .copy-btn:hover {
+  background-color: #6c8bc7;
+}
+
+.password-inline .copy-success {
+  font-size: 0.9rem;
+  color: #28a745;
+  margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+  .App {
+    padding: 20px;
+    width: 85%;
+    max-width: 420px;
+  }
+
+  .password-length input[type="range"] {
+    width: 65%;
+  }
+
+  .password-generator button {
+    font-size: 1.1rem;
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .password-length input[type="range"] {
+    width: 100%;
+  }
+
+  .password-generator button {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  .options label {
+    font-size: 0.95rem;
+  }
+
+  .password-inline .password {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px;
+  }
+
+  .password-inline .password {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .password-inline .copy-btn {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .password-generator button {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
